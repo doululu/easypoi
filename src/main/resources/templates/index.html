@@ -1,0 +1,18 @@
+[#import "/util/freemarkerTemplate.html" as ft/]
+[@ft.head title="Excel上传" /]
+<body>
+    <form method="post" enctype="multipart/form-data" action="upExcel">
+        <div>
+            <label>上传Excel：</label> <input name="file" type="file">
+            <button type="submit">上传</button>
+        </div>
+    </form>
+    <hr>
+    <form method="post"  action="upExcel">
+        <div>
+            <label>下载Excel：
+            <button type="submit">下载</button>
+        </div>
+    </form>
+</body>
+</html>
