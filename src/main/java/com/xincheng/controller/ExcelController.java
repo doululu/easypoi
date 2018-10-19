@@ -24,9 +24,14 @@ public class ExcelController {
     @Autowired
     private ExcelService excelService;
 
-    // 上传excel文件
+    /**
+     * 上传 excel文件
+     * @param request
+     * @param file 文件
+     * @return
+     */
     @RequestMapping("/upExcel")
-    public String insertExcel(HttpServletRequest request, MultipartFile file) {
+    public String upExcel(HttpServletRequest request, MultipartFile file) {
 
         //根据接收的Excel文件来导入Excel,并封装成实体类
         List<UpExcelDemo> upExcelDemos = EasyPoiUtil.importExcel(file, 0, 1, UpExcelDemo.class);
@@ -36,5 +41,13 @@ public class ExcelController {
         }else{
             return "Defeated";
         }
+    }
+
+    /**
+     * 下载 excel文件
+     */
+    @RequestMapping("/downExcel")
+    public void downExcel(){
+
     }
 }
